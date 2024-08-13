@@ -1,21 +1,25 @@
 <%- include("partials/header.ejs") %>
 <h1>Edit your post</h1>
 <div class="container">
-  <form action="/posts/edit/<%= title %>" method="post" id="editForm">
+  <form action="/posts/edit/<%= id %>" method="post" id="editForm">
     <div class="form-group">
       <%# to access the input data, it's corresponding lable for="" & input
       name="" should be same. %>
-
-      <label for="postTitle"><%= title %></label>
+      <input
+        type="text"
+        name="postTitle"
+        class="form-control"
+        value="<%= title %>"
+      />
       <label for="postBody">Post :</label>
       <textarea
         name="postBody"
         id="postContent"
         class="form-control"
-        rows="4"
+        rows="20"
         cols="50"
       >
-  <%= content %></textarea
+    <%= content %></textarea
       >
     </div>
     <button
@@ -25,14 +29,6 @@
       id="submit_btn"
     >
       Update Post
-    </button>
-    <button
-      class="btn btn-secondary"
-      type="submit"
-      name="button"
-      id="submit_btn"
-    >
-      Delete
     </button>
   </form>
 </div>
