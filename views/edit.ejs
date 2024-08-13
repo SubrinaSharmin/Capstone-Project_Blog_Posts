@@ -1,0 +1,39 @@
+<%- include("partials/header.ejs") %>
+<h1>Edit your post</h1>
+<div class="container">
+  <form action="/posts/edit/<%= title %>" method="post" id="editForm">
+    <div class="form-group">
+      <%# to access the input data, it's corresponding lable for="" & input
+      name="" should be same. %>
+
+      <label for="postTitle"><%= title %></label>
+      <label for="postBody">Post :</label>
+      <textarea
+        name="postBody"
+        id="postContent"
+        class="form-control"
+        rows="4"
+        cols="50"
+      >
+  <%= content %></textarea
+      >
+    </div>
+    <button
+      class="btn btn-secondary"
+      type="submit"
+      name="button"
+      id="submit_btn"
+    >
+      Update Post
+    </button>
+    <button
+      class="btn btn-secondary"
+      type="submit"
+      name="button"
+      id="submit_btn"
+    >
+      Delete
+    </button>
+  </form>
+</div>
+<%- include("partials/footer.ejs") %>
